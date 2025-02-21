@@ -37,9 +37,12 @@ const LoginPage = () => {
 
         localStorage.setItem("token", token);
         Swal.fire({
+          timer: 500,
           icon: "success",
           title: "Login Success",
           text: "You have successfully logged in.",
+        }).then(() => {
+          window.location.href = "/tasklist"; // Change this to your target page
         });
       })
       .catch(() => {
@@ -54,10 +57,12 @@ const LoginPage = () => {
     <Container
       maxWidth="md"
       sx={{
+        flex: 1,
         display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
         alignItems: "center",
-        justifyContent: "left",
-        minHeight: "100vh",
+        height: "100vh",
       }}
     >
       <Paper
